@@ -2,9 +2,9 @@
 # Paldesk
 ## Installing
 
-Pozzito SDK requires device with minimum Android API version 16.
+Paldesk SDK requires device with minimum Android API version 16.
 
-Add Pozzito repository in your current repositories in project's root build.gradle:
+Add Paldesk repository in your current repositories in project's root build.gradle:
 
     allprojects {
     	repositories {
