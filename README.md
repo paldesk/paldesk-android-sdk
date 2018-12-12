@@ -16,7 +16,7 @@ Add Paldesk repository in your current repositories in project's root build.grad
 Add dependency in your applications build.gradle:
 
     dependencies {
-        implementation 'com.paldesk.android:paldesk-sdk:1.0.0'
+        implementation 'com.paldesk.android:paldesk-sdk:1.0.2'
     }
     
 Add these permissions to your Manifest file:
