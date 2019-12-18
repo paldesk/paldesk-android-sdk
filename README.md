@@ -48,7 +48,7 @@ PaldeskSDK.startConversation(this)
 ```
 ## Creating client
 
-Depending on your Client authentification type settings from Webapp -> Administration -> iOS SDK (https://www.paldesk.com/), you can choose three options:
+Depending on your Client authentification type settings from Webapp -> Administration -> Android SDK (https://www.paldesk.com/), you can choose three options:
 
 * No data required - client will appear as “visitor” - you are free to start conversation without setting information about your client
 * You provide information about client through code - you can create client when your client becomes available to you with following method:
