@@ -16,7 +16,7 @@ Add Paldesk repository in your current repositories in project's root build.grad
 Add dependency in your applications build.gradle:
 
     dependencies {
-        implementation 'com.paldesk.android:paldesk-sdk:1.0.3'
+        implementation 'com.paldesk.android:paldesk-sdk:1.0.5'
     }
     
 Add these permissions to your Manifest file:
@@ -54,15 +54,16 @@ Depending on your Client authentification type settings from Webapp -> Administr
 * You provide information about client through code - you can create client when your client becomes available to you with following method:
         
 ```java
-ClientParams clientParams = new ClientParams.Builder("email", "externalId")
+ClientParams clientParams = new ClientParams.Builder("externalId")
     .firstName("First Name")
     .lastName("Last Name")
+    .email("email")
     .build();
                 
 PaldeskSDK.createClient(clientParams);
 ```        
 
-  Email and ExternalId fields are mandatory and other fields are optional. ExternalId should be something unique from your        side, preferably your client's id (or even email).
+  ExternalId field is mandatory and other fields are optional. ExternalId should be something unique from your side, preferably your client's id (or even email).
   If client information is not provided, your client will appear as “visitor". You can explicitly create "visitor" by calling:
 ```java
 PaldeskSDK.createAnonymousClient()
