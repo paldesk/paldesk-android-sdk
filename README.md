@@ -16,7 +16,7 @@ Add Paldesk repository in your current repositories in project's root build.grad
 Add dependency in your applications build.gradle:
 
     dependencies {
-        implementation 'com.paldesk.android:paldesk-sdk:1.0.5'
+        implementation 'com.paldesk.android:paldesk-sdk:1.0.6'
     }
     
 Add these permissions to your Manifest file:
@@ -62,14 +62,48 @@ ClientParams clientParams = new ClientParams.Builder("externalId")
                 
 PaldeskSDK.createClient(clientParams);
 ```        
+or with callback:
+```java
+ClientParams clientParams = new ClientParams.Builder("externalId")
+    .firstName("First Name")
+    .lastName("Last Name")
+    .email("email")
+    .build();
+                
+ PaldeskSDK.createClient(clientParams, new PaldeskSDK.PDClientCallback() {
+    @Override
+    public void onSuccess() {
+       // your code here
+    }
 
+    @Override
+    public void onError() {
+       // your code here
+    }
+});
+``` 
+                        
   ExternalId field is mandatory and other fields are optional. ExternalId should be something unique from your side, preferably your client's id (or even email).
   If client information is not provided, your client will appear as “visitor". You can explicitly create "visitor" by calling:
 ```java
 PaldeskSDK.createAnonymousClient()
 ``` 
-* Client provides his information through form - your usr will have to provide his information in registration form which will be shown on first start (prior to starting conversation).
+or with callback:
+```java
+PaldeskSDK.createAnonymousClient(new PaldeskSDK.PDClientCallback() {
+   @Override
+   public void onSuccess() {
+       // your code here
+   }
 
+   @Override
+   public void onError() {
+       // your code here
+   }
+});
+``` 
+
+* Client provides his information through form - your usr will have to provide his information in registration form which will be shown on first start (prior to starting conversation).
 
 
 ## Clearing client
